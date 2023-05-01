@@ -1,0 +1,652 @@
+{
+	"info": {
+		"_postman_id": "ad25d8fd-5231-4adf-ba6d-9a4950cf7b65",
+		"name": "API-PetDogui",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23301298",
+		"_collection_link": "https://planetary-space-290339.postman.co/workspace/teste~e987cf49-31e0-475b-97f7-6c9cedd5fd82/collection/23301298-ad25d8fd-5231-4adf-ba6d-9a4950cf7b65?action=share&creator=23301298&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "Servico",
+			"item": [
+				{
+					"name": "findById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/pet-dogui/resources/servico/12",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pet-dogui",
+								"resources",
+								"servico",
+								"12"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "insert",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"descricao\": \"teste atualizado\",\r\n    \"status\": true,\r\n    \"valor\": 10.0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/pet-dogui/resources/servico",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pet-dogui",
+								"resources",
+								"servico"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"descricao\": \"alteração de descrição\",\r\n    \"status\": true,\r\n    \"valor\": 10.0,\r\n    \"id\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/pet-dogui/resources/servico",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pet-dogui",
+								"resources",
+								"servico"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/pet-dogui/resources/servico/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pet-dogui",
+								"resources",
+								"servico",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/pet-dogui/resources/servico",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pet-dogui",
+								"resources",
+								"servico"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findAllWithParameters",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/pet-dogui/resources/servico/filter?descricao=alteraç",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pet-dogui",
+								"resources",
+								"servico",
+								"filter"
+							],
+							"query": [
+								{
+									"key": "descricao",
+									"value": "alteraç"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pessoa",
+			"item": [
+				{
+					"name": "findById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/pet-dogui/resources/pessoa/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pet-dogui",
+								"resources",
+								"pessoa",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "insert",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"ativo\": true,\r\n        \"cep\": \"85.-120\",\r\n        \"email\": \"email.com\",\r\n        \"nome\": \"testeeeee \",\r\n        \"nrTelefone\": \"324234234234\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/pet-dogui/resources/pessoa",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pet-dogui",
+								"resources",
+								"pessoa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"ativo\": true,\r\n        \"cep\": \"\",\r\n        \"email\": \"nd\",\r\n        \"nome\": \"pessoa comum \",\r\n        \"nrTelefone\": \"84798757\",\r\n        \"id\": 4\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/pet-dogui/resources/pessoa",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pet-dogui",
+								"resources",
+								"pessoa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/pet-dogui/resources/pessoa/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pet-dogui",
+								"resources",
+								"pessoa",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/pet-dogui/resources/pessoa",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pet-dogui",
+								"resources",
+								"pessoa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findAllWithParameters",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/pet-dogui/resources/pessoa/filter?nome=comum",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pet-dogui",
+								"resources",
+								"pessoa",
+								"filter"
+							],
+							"query": [
+								{
+									"key": "nome",
+									"value": "comum"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Endereco",
+			"item": [
+				{
+					"name": "findById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/pet-dogui/resources/endereco/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pet-dogui",
+								"resources",
+								"endereco",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "insert",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"complemento\": \"casa\",\r\n    \"dsBairro\": \"centro\",\r\n    \"id\": 1,\r\n    \"nomeRua\": \"rua para testar\",\r\n    \"nrCasa\": 23,\r\n    \"nrCep\": \"\",\r\n    \"pessoa\": {\r\n        \"ativo\": true,\r\n        \"email\": \"email@email.com\",\r\n        \"id\": 1,\r\n        \"nome\": \"pessoa\",\r\n        \"nrTelefone\": \"4590195231\"\r\n    },\r\n    \"stAtivo\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/pet-dogui/resources/endereco",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pet-dogui",
+								"resources",
+								"endereco"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"complemento\": \"casa\",\r\n    \"dsBairro\": \"centro\",\r\n    \"id\": 1,\r\n    \"nomeRua\": \"alterado nome da rua\",\r\n    \"nrCasa\": 23,\r\n    \"nrCep\": \"\",\r\n    \"pessoa\": {\r\n        \"ativo\": true,\r\n        \"email\": \"email@email.com\",\r\n        \"id\": 1,\r\n        \"nome\": \"pessoa\",\r\n        \"nrTelefone\": \"4590195231\"\r\n    },\r\n    \"stAtivo\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/pet-dogui/resources/endereco",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pet-dogui",
+								"resources",
+								"endereco"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/pet-dogui/resources/endereco/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pet-dogui",
+								"resources",
+								"endereco",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/pet-dogui/resources/endereco",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pet-dogui",
+								"resources",
+								"endereco"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findAllWithParameters",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/pet-dogui/resources/endereco/filter?id_pessoa=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pet-dogui",
+								"resources",
+								"endereco",
+								"filter"
+							],
+							"query": [
+								{
+									"key": "id_pessoa",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pet",
+			"item": [
+				{
+					"name": "findById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/pet-dogui/resources/pet/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pet-dogui",
+								"resources",
+								"pet",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "insert",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"dono\": {\r\n        \"ativo\": true,\r\n        \"email\": \"email@email.com\",\r\n        \"id\": 1,\r\n        \"nome\": \"pessoa\",\r\n        \"nrTelefone\": \"4590195231\"\r\n    },\r\n    \"genero\": \"FEMEA\",\r\n    \"nome\": \"asdasdasdasd\",\r\n    \"peso\": 12.0,\r\n    \"porte\": \"MINI\",\r\n    \"status\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/pet-dogui/resources/pet",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pet-dogui",
+								"resources",
+								"pet"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"dono\": {\r\n        \"ativo\": true,\r\n        \"email\": \"email@email.com\",\r\n        \"id\": 2,\r\n        \"nome\": \"pessoa\",\r\n        \"nrTelefone\": \"4590195231\"\r\n    },\r\n    \"genero\": \"FEMEA\",\r\n    \"nome\": \"PAPAGAIA para apagar\",\r\n    \"peso\": 12.0,\r\n    \"porte\": \"MINI\",\r\n    \"status\": true,\r\n    \"id\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/pet-dogui/resources/pet",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pet-dogui",
+								"resources",
+								"pet"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/pet-dogui/resources/pet/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pet-dogui",
+								"resources",
+								"pet",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/pet-dogui/resources/pet",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pet-dogui",
+								"resources",
+								"pet"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findAllWithParameters",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/pet-dogui/resources/pet/filter?nome_pet=&nome_dono=altera",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pet-dogui",
+								"resources",
+								"pet",
+								"filter"
+							],
+							"query": [
+								{
+									"key": "id_dono",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "nome_pet",
+									"value": ""
+								},
+								{
+									"key": "nome_dono",
+									"value": "altera"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

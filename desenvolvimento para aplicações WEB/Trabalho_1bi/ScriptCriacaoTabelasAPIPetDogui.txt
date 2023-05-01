@@ -1,0 +1,152 @@
+-- SEQUENCE: public.endereco_id_seq
+
+-- DROP SEQUENCE IF EXISTS public.endereco_id_seq;
+
+CREATE SEQUENCE IF NOT EXISTS public.endereco_id_seq
+    INCREMENT 1
+    START 1
+    MINVALUE 1
+    MAXVALUE 2147483647
+    CACHE 1;
+
+ALTER SEQUENCE public.endereco_id_seq
+    OWNER TO postgres;
+	
+-- SEQUENCE: public.pessoa_id_seq
+
+-- DROP SEQUENCE IF EXISTS public.pessoa_id_seq;
+
+CREATE SEQUENCE IF NOT EXISTS public.pessoa_id_seq
+    INCREMENT 1
+    START 1
+    MINVALUE 1
+    MAXVALUE 2147483647
+    CACHE 1;
+
+ALTER SEQUENCE public.pessoa_id_seq
+    OWNER TO postgres;	
+
+-- SEQUENCE: public.pet_id_seq
+
+-- DROP SEQUENCE IF EXISTS public.pet_id_seq;
+
+CREATE SEQUENCE IF NOT EXISTS public.pet_id_seq
+    INCREMENT 1
+    START 1
+    MINVALUE 1
+    MAXVALUE 2147483647
+    CACHE 1;
+
+ALTER SEQUENCE public.pet_id_seq
+    OWNER TO postgres;
+	
+-- SEQUENCE: public.servico_id_seq
+
+-- DROP SEQUENCE IF EXISTS public.servico_id_seq;
+
+CREATE SEQUENCE IF NOT EXISTS public.servico_id_seq
+    INCREMENT 1
+    START 1
+    MINVALUE 1
+    MAXVALUE 2147483647
+    CACHE 1;
+
+ALTER SEQUENCE public.servico_id_seq
+    OWNER TO postgres;	
+
+
+
+-- Table: public.pessoa
+
+-- DROP TABLE IF EXISTS public.pessoa;
+
+CREATE TABLE IF NOT EXISTS public.pessoa
+(
+    id integer NOT NULL DEFAULT nextval('pessoa_id_seq'::regclass),
+    nome character varying(150) COLLATE pg_catalog."default",
+    telefone character varying(150) COLLATE pg_catalog."default",
+    email character varying(150) COLLATE pg_catalog."default",
+    st_ativo boolean,
+    CONSTRAINT pessoa_pkey PRIMARY KEY (id)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.pessoa
+    OWNER to postgres;
+	
+	
+-- Table: public.endereco
+
+-- DROP TABLE IF EXISTS public.endereco;
+
+CREATE TABLE IF NOT EXISTS public.endereco
+(
+    id integer NOT NULL DEFAULT nextval('endereco_id_seq'::regclass),
+    nome_rua character varying(150) COLLATE pg_catalog."default",
+    complemento character varying(150) COLLATE pg_catalog."default",
+    bairro character varying(150) COLLATE pg_catalog."default",
+    numero_casa integer,
+    numero_cep character varying(15) COLLATE pg_catalog."default",
+    st_ativo boolean,
+    id_pessoa integer NOT NULL,
+    CONSTRAINT endereco_pkey PRIMARY KEY (id),
+    CONSTRAINT endereco_id_pessoa_fkey FOREIGN KEY (id_pessoa)
+        REFERENCES public.pessoa (id) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.endereco
+    OWNER to postgres;
+	
+	
+	
+	
+	
+-- Table: public.pet
+
+-- DROP TABLE IF EXISTS public.pet;
+
+CREATE TABLE IF NOT EXISTS public.pet
+(
+    id integer NOT NULL DEFAULT nextval('pet_id_seq'::regclass),
+    nome character varying(150) COLLATE pg_catalog."default",
+    id_dono integer,
+    genero character varying(150) COLLATE pg_catalog."default",
+    peso double precision,
+    porte character varying(150) COLLATE pg_catalog."default",
+    status boolean,
+    CONSTRAINT pet_pkey PRIMARY KEY (id),
+    CONSTRAINT pet_id_dono_fkey FOREIGN KEY (id_dono)
+        REFERENCES public.pessoa (id) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.pet
+    OWNER to postgres;
+
+
+
+-- Table: public.servico
+
+-- DROP TABLE IF EXISTS public.servico;
+
+CREATE TABLE IF NOT EXISTS public.servico
+(
+    id integer NOT NULL DEFAULT nextval('servico_id_seq'::regclass),
+    descricao character varying(150) COLLATE pg_catalog."default",
+    valor double precision,
+    status boolean,
+    CONSTRAINT servico_pkey PRIMARY KEY (id)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.servico
+    OWNER to postgres;	
