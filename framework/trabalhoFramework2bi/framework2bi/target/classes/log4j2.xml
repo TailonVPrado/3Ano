@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="warn">
+	<Properties>
+		<Property name="basePath">C:\Users\tailon.prado\Documents</Property>
+	</Properties>
+
+	<Appenders>
+            
+                <!-- Console appender configuration -->
+                <Console name="console" target="SYSTEM_OUT">
+                    <PatternLayout
+                        pattern="%d{dd/MM/yyyy HH:mm:ss} %-5p - %m%n" />
+                </Console>
+        
+		<RollingFile name="fileLogger"
+			fileName="${basePath}/persistencia.log"
+			filePattern="${basePath}/geral-%d{yyyy-MM-dd}.log">
+			<PatternLayout>
+				<pattern>[%-5level] %d{dd/MM/yyyy HH:mm:ss} - %msg%n
+				</pattern>
+			</PatternLayout>
+			<Policies>
+				<TimeBasedTriggeringPolicy interval="1" modulate="true" />
+				<SizeBasedTriggeringPolicy size="10MB" />
+			</Policies>
+			<!-- Max 10 files will be created everyday -->
+			<DefaultRolloverStrategy max="10">
+				<Delete basePath="${basePathr}" maxDepth="10">
+					<!-- Delete all files older than 30 days -->
+					<IfLastModified age="30d" />
+				</Delete>
+			</DefaultRolloverStrategy>
+		</RollingFile>
+	</Appenders>
+	<Loggers>
+                <Logger name="br.com.unipar.hibernateteste" additivity="false" level="info">
+                    <AppenderRef ref="fileLogger" />
+                    <AppenderRef ref="console"/>
+                </Logger>
+                
+                 <Root level="info" additivity="false">
+                    <AppenderRef ref="console" />
+                </Root>
+	</Loggers>
+</Configuration>
